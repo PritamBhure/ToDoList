@@ -1,123 +1,161 @@
-* * {
+* {
     margin: 0;
     padding: 0;
     box-sizing: border-box;
-  }
-  
-  :root {
-    --text: 1.5rem;
-    --head: calc(1rem + 5vw);
-    --bg-color: #f6b93b;
-  }
-  
-  body {
+}
+
+body {
+   background-image: url('colorful_background_5-wallpaper-1920x1080.jpg');
+    color: rgb(157, 35, 202);
     font-family: "Poppins", sans-serif;
-  }
-  
-  .hero-section {
     min-height: 100vh;
-    background: url("https://images.unsplash.com/photo-1571091655789-405eb7a3a3a8?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=1352&q=80");
-    background-repeat: no-repeat;
-    background-size: cover;
-    background-position: center;
-    position: relative;
-    z-index: 2;
-    animation: slide 1s ease-in-out;
-  }
-  
-  .navbar {
+    background-repeat: no-repeat ;
+    height: 100%;
+    width: 100%;
+}
+
+header {
+    font-size: 1.5rem;
+
+}
+
+header, 
+form {
+    min-height: 20vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+form input, 
+form button {
+    padding: 0.5rem;
+    padding-left: 1rem;
+    font-size: 1.8rem;
+    border: none;
+    background: white;
+    border-radius: 2rem;
+}
+
+form button {
+    color: rgb(0, 0, 0);
+    background: white;
+    cursor: pointer;
+    transition: all 0.3 ease;
+    margin-left: 0.5rem;
+}
+
+form button:hover {
+    color: white;
+    background: rgb(0, 0, 0);
+}
+
+.fa-plus-circle {
+    margin-top: 0.3rem;
+    margin-left: -8px;
+}
+
+.todo-container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.todo-list {
+    min-width: 30%;
+    list-style: none;
+}
+
+.todo {
+    margin: 0.5rem;
+    padding-left: 0.5rem;
+    background: white;
+    color: black;
+    font-size: 1.5rem;
     display: flex;
     justify-content: space-between;
     align-items: center;
-    height: 10vh;
-    padding: 0rem 1.5rem;
+    transition: 0.5s;
+    border-radius: 2rem;
+}
+
+.todo li {
+    flex: 1;
+}
+
+.trash-btn, 
+.complete-btn {
     color: white;
-    transform: translateY(-100%);
-    animation: movedown 850ms ease-in 1s forwards;
-  }
-  
-  @keyframes movedown {
-    from {
-      transform: translateY(-100%);
-    }
-  
-    to {
-      transform: translateY(0%);
-    }
-  }
-  
-  .navbar ul {
-    list-style: none;
-  }
-  
-  .navbar ul li {
-    display: inline-block;
-    margin-left: 3rem;
-    font-size: var(--text);
-  }
-  
-  .navbar ul li a {
-    text-decoration: none;
-    color: white;
-    border-bottom: 2px solid transparent;
-  }
-  
-  .navbar ul li a:hover {
-    border-bottom: 2px solid var(--bg-color);
-  }
-  
-  .hero-text {
-    color: white;
-    height: 90vh;
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    align-items: center;
-    text-align: center;
-  }
-  
-  @keyframes slide {
-    from {
-      transform: translateX(-100%);
-    }
-  
-    to {
-      transform: translateX(0%);
-    }
-  }
-  
-  .hero-text::before {
-    content: "";
+    border: none;
+    padding: 1rem;
+    cursor: pointer;
+    font-size: 1.5rem;
+}
+
+.complete-btn {
+    background: rgb(33, 14, 109);
+}
+
+.trash-btn {
+    border-top-right-radius: 1.75rem;
+    border-bottom-right-radius: 1.75rem;
+    background: rgb(59, 202, 234);
+}
+
+.todo-item {
+    padding: 0rem 0.5rem;
+}
+
+.fa-trash, 
+.fa-check-circle {
+    pointer-events: none;
+}
+
+.completed {
+    text-decoration: line-through;
+    opacity: 0.5;
+}
+
+.slide {
+    transform: translateX(10rem);
+    opacity: 0;
+}
+
+select {
+    -webkit-appearance: none;
+    -moz-appearance: none;
+    appearance: none;
+    outline: none;
+    border: none;
+}
+
+.select {
+    margin: 1rem;
+    position: relative;
+    overflow: hidden;
+    border-radius: 50px;
+}
+
+select {
+    color:rgb(8, 8, 8);
+    width: 10rem;
+    height: 3.2rem;
+    cursor: pointer;
+    padding: 1rem;
+}
+
+.select::after {
+    content: "\25BC";
     position: absolute;
-    width: 100%;
-    height: 100%;
-    background: black;
-    z-index: -1;
+    background:rgb(7, 7, 7);
     top: 0;
-    opacity: 0.6;
-  }
-  
-  .hero-text a {
-    color: white;
-    background: var(--bg-color);
-    font-weight: 900;
-    font-size: var(--text);
-    padding: 0.8rem 1rem;
-    margin: 0.8rem auto;
-    display: block;
-    text-decoration: none;
-    transition: opacity 250ms linear;
-  }
-  
-  .hero-text a:hover {
-    opacity: 0.8;
-  }
-  
-  .hero-text h2 {
-    font-size: var(--head);
-  }
-  
-  .hero-text p {
-    font-size: 3rem;
-  }
-  
+    right: 0;
+    padding: 1rem;
+    pointer-events: none;
+    transition: all 0.3s ease;
+}
+
+.select::hover::after {
+    background: white;
+    color: rgb(255, 200, 0);
+}
